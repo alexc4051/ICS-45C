@@ -1,0 +1,31 @@
+Inputs:
+const int CENTS_FOR_CHIPS = 68;
+const int CENTS_CHANGE_TO_POCKET = 132;
+int main()
+{
+	Coins pocket(5,3,6,8), piggyBank(50,50,50,50), vacuum(1,2,3,4);
+	pocket.extractChange(CENTS_FOR_CHIPS);
+	cout << "I have " << pocket << " left in my pocket." << endl;
+	pocket.depositChange(piggyBank.extractChange(CENTS_CHANGE_TO_POCKET));
+	cout << "I have " << pocket << " in my pocket and " << piggyBank << " in my PiggyBank." << endl;
+	piggyBank.depositChange(vacuum);
+	cout << "I have " << piggyBank << " in my PiggyBank." << endl;
+	return 0;
+}
+
+
+
+Outputs (for each question):
+
+1)Buy a bag of chips that costs 68 cents taking the coins from your pocket. Display what's left in your pocket.
+I have 5 quarters, 0 dimes, 0 nickels, 0 pennies
+Total Cents: 125 left in my pocket.
+
+2)Transfer a bunch of coins from you piggyBank to your pocket. Display how much you now have in both.
+I have 10 quarters, 0 dimes, 1 nickels, 2 pennies
+Total Cents: 257 left in my pocket and 76 quarters, 1 dimes, 1 nickels, 3 pennies
+Total Cents: 1918 in my PiggyBank.
+
+3)While vacuuming, you find loose change in your sofa. Put it in your piggyBank. Display how much you now have in your piggyBank.
+I have 77 quarters, 3 dimes, 4 nickels, 7 pennies
+Total Cents: 1982 in my PiggyBank
